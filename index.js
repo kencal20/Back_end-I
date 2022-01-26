@@ -1,6 +1,7 @@
 const http = require("http");
 
 const handleAllRequest = (requestObject, responseObject) => {
+<<<<<<< HEAD
   //<--RequestObject-->
   //   console.log("hi, just recieved a request");
   //   console.log(requestObject);
@@ -20,6 +21,12 @@ const handleAllRequest = (requestObject, responseObject) => {
     responseObject.write("<h1>Page not found</h1>");
   }
 
+=======
+  console.log("hi, just recieved a request");
+  //   console.log(requestObject);
+  responseObject.write("<h1>this is your response</h1> \n");
+  responseObject.write('second part of response')
+>>>>>>> efa25eaf34404617b8137e82a3e4110a4bfaad2a
   responseObject.end();
 };
 const server = http.createServer(handleAllRequest);
