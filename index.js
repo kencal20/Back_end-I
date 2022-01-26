@@ -1,4 +1,4 @@
-const http = require("http");
+const express = require('express');
 
 const handleAllRequest = (requestObject, responseObject) => {
   //<--RequestObject-->
@@ -24,7 +24,8 @@ const handleAllRequest = (requestObject, responseObject) => {
 
   responseObject.end();
 };
-const server = http.createServer(handleAllRequest);
+const server = express(handleAllRequest);
+server.use(handleAllRequest)
 
 server.listen(1000, "localhost", () =>
   console.log("server is ready to accept request")
