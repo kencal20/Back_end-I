@@ -1,19 +1,28 @@
 const express = require("express");
 
-
- 
-
-const handleHomeRequest = (req, res) => {
-  res.send("<h1>Welcome to Home page</h1>");
-};
 const handleLoginRequest = (req, res) => {
   res.send("<h1>This is the login Page</h1>");
 };
+const handleProfileRequest = (req, res) => {
+  res.send("<h1>This is the  Profile Page with patch method</h1>");
+};
+
+const handleSigninRequest = (req, res) => {
+  res.send("<h1>This is the Signin Page with Put method</h1>");
+};
+const handleUserRequest = (req, res) => {
+  res.send("<h1>This is the  Page</h1>");
+};
+const handleContactsRequest = (req, res) => {
+  res.send("<h1>This is the contacts Page  with delete method</h1>");
+};
 
 const server = express();
-server.post("/login",handleLoginRequest)
-
-
+server.post("/login", handleLoginRequest);
+server.patch("/profile", handleProfileRequest);
+server.put("/signin", handleSigninRequest);
+server.get("/user", handleUserRequest);
+server.delete("/contatcts", handleContactsRequest);
 
 server.listen(1000, "localhost", () =>
   console.log("server is ready to accept request")
