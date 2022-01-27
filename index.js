@@ -11,7 +11,7 @@ const handleLoginRequest = (req, res) => {
 };
 
 const server = express();
-server.get("/login",handleLoginRequest)
+server.post("/login",handleLoginRequest)
 server.use("/", handleHomeRequest);
 
 
