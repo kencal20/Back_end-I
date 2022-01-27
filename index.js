@@ -1,13 +1,6 @@
 const express = require("express");
 
 const handleAllRequest = (requestObject, responseObject) => {
-  //<--RequestObject-->
-  //   console.log("hi, just recieved a request");
-  //   console.log(requestObject);
-
-  //  <-- ResponseObject -->
-  //   responseObject.write("<h1>this is your response</h1> \n");
-  //   responseObject.write('second part of response')
 
   const url = requestObject.url;
 
