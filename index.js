@@ -12,7 +12,7 @@ const handleLoginRequest = (req, res) => {
 
 const server = express();
 server.post("/login",handleLoginRequest)
-server.use("/", handleHomeRequest);
+
 
 
 server.listen(1000, "localhost", () =>
