@@ -1,10 +1,7 @@
 const express = require("express");
 
-const handleAllRequest = (requestObject, responseObject) => {
-  const url = requestObject.url;
 
-  responseObject.end();
-};
+ 
 
 const handleHomeRequest = (req, res) => {
   res.send("<h1>Welcome to Home page</h1>");
