@@ -20,13 +20,13 @@ const handleContactsRequest = (req, res) => {
 
 //Middleware
 const middlewarefunction = (req, res, next) => {
-  console.log("This is the middleware");
+  console.log(req);
   //make some checks
   res.send('this is a middleware response')
 next()
 };
 
-
+const loginroutespecificmiddleware
 
 //Routes
 const server = express();
