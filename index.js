@@ -1,4 +1,6 @@
 const express = require("express");
+const req = require("express/lib/request");
+const res = require("express/lib/response");
 
 const handleLoginRequest = (req, res) => {
   res.send("<h1>This is the login Page</h1>");
@@ -20,18 +22,21 @@ const handleContactsRequest = (req, res) => {
 
 //Middleware
 const middlewarefunction = (req, res, next) => {
-  console.log(req);
+  // console.log(req);
   //make some checks
-  res.send('this is a middleware response')
+
 next()
 };
 
-const loginroutespecificmiddleware
+const loginroutespecificmiddleware =(req,res,next) =>{
+  console.log('login route middleware executed');
+  
+}
 
 //Routes
 const server = express();
-server.use(middlewarefunction);
-server.post("/login", handleLoginRequest);
+// server.use(middlewarefunction);
+server.post("/login", loginroutespecificmiddleware,handleLoginRequest);
 server.patch("/profile", handleProfileRequest);
 server.put("/signin", handleSigninRequest);
 server.get("/user", handleUserRequest);
