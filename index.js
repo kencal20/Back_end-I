@@ -30,7 +30,7 @@ next()
 
 const loginroutespecificmiddleware =(req,res,next) =>{
   console.log('login route middleware executed');
-  
+  next();
 }
 
 //Routes
