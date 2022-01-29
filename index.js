@@ -17,7 +17,19 @@ const handleContactsRequest = (req, res) => {
   res.send("<h1>This is the contacts Page  with delete method</h1>");
 };
 
+
+//Middleware
+const middlewarefunction = (req, res, next) => {
+  console.log("This is the middleware");
+  //make some checks
+next()
+};
+
+
+
+//Routes
 const server = express();
+server.use(middlewarefunction);
 server.post("/login", handleLoginRequest);
 server.patch("/profile", handleProfileRequest);
 server.put("/signin", handleSigninRequest);
