@@ -1,3 +1,4 @@
+
 const express = require("express");
 const req = require("express/lib/request");
 const res = require("express/lib/response");
@@ -41,6 +42,11 @@ server.patch("/profile", handleProfileRequest);
 server.put("/signin", handleSigninRequest);
 server.get("/user", handleUserRequest);
 server.delete("/contacts", handleContactsRequest);
+
+
+  
+
+
 
 server.listen(1000, "localhost", () =>
   console.log("server is ready to accept request")
