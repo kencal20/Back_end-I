@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const server = express("server");
 server.use(express.static(path.join(__dirname,"public")))
+
+//  MANUAL WAY OF ROUTING FROM PUBLIC
 // const serveHomePage = (req,res) => {
 //   //find the file
 //   const homepagefilepath = path.join(__dirname, "public", "index.html");
