@@ -21,12 +21,12 @@ const handleContactsRequest = (req, res) => {
 
 
 //Middleware
-const middlewarefunction = (req, res, next) => {
+// const middlewarefunction = (req, res, next) => {
   // console.log(req);
   //make some checks
 
-next()
-};
+// next()
+// };
 
 const loginroutespecificmiddleware =(req,res,next) =>{
   console.log('login route middleware executed');
