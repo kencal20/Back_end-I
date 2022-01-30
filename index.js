@@ -1,30 +1,52 @@
-const http = require("http");
 
-const handleAllRequest = (requestObject, responseObject) => {
-  //<--RequestObject-->
-//   console.log("hi, just recieved a request");
- //   console.log(requestObject);
+const express = require("express");
+const req = require("express/lib/request");
+const res = require("express/lib/response");
 
-  //  <-- ResponseObject -->
-  //   responseObject.write("<h1>this is your response</h1> \n");
-  //   responseObject.write('second part of response')
-
-  const url = requestObject.url;
-  if (url === "/") {
-    responseObject.write("<h1>Welcome to home page</h1>");
-  } else if (url === "/login") {
-      
-    responseObject.write("<h1>Welcome to Login page</h1>");
-  } else if (url === "/signup") {
-    responseObject.write("<h1>Welcome to Signup page</h1>");
-  }
-  else{
-      responseObject.write("<h1>Page not found</h1>")
-  }
-
-  responseObject.end();
+const handleLoginRequest = (req, res) => {
+  res.send("<h1>This is the login Page</h1>");
 };
-const server = http.createServer(handleAllRequest);
+const handleProfileRequest = (req, res) => {
+  res.send("<h1>This is the  Profile Page with patch method</h1>");
+};
+
+const handleSigninRequest = (req, res) => {
+  res.send("<h1>This is the Signin Page with Put method</h1>");
+};
+const handleUserRequest = (req, res) => {
+  res.send("<h1>This is the User Page with method get</h1>");
+};
+const handleContactsRequest = (req, res) => {
+  res.send("<h1>This is the contacts Page  with delete method</h1>");
+};
+
+
+//Middleware
+// const middlewarefunction = (req, res, next) => {
+  // console.log(req);
+  //make some checks
+
+// next()
+// };
+
+const loginroutespecificmiddleware =(req,res,next) =>{
+  console.log('login route middleware executed');
+  next();
+}
+
+//Routes
+const server = express();
+// server.use(middlewarefunction);
+server.post("/login", loginroutespecificmiddleware,handleLoginRequest);
+server.patch("/profile", handleProfileRequest);
+server.put("/signin", handleSigninRequest);
+server.get("/user", handleUserRequest);
+server.delete("/contacts", handleContactsRequest);
+
+
+  
+
+
 
 server.listen(1000, "localhost", () =>
   console.log("server is ready to accept request")
