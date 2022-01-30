@@ -18,7 +18,5 @@ server.use(express.static(path.join(__dirname,"public")))
 server.listen(1000, () => console.log("server is ready to accept request"));
 
 
-server.listen(1000, "localhost", () =>
-  console.log("server is ready to accept request")
-);
+
 
